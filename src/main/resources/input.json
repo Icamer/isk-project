@@ -1,0 +1,25 @@
+{
+    "routers": [
+        {
+            "id": 0
+        }, 
+        {
+            "id": 1
+        }
+    ],
+    "iteration": 0,
+    "links": [
+        {
+            "linkId": 0,
+            "idServerOne": 0,
+            "idServerTwo": 1,
+            "isWorking": "true"
+        },
+        {
+            "linkId": 1,
+            "idServerOne": 1,
+            "idServerTwo": 0,
+            "isWorking": "true"
+        }
+    ]
+}
