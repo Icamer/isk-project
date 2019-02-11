@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="isk-projekt" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="isk-projekt" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="isk-projekt" options="-bootclasspath C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\resources.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\rt.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\sunrsasign.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\jsse.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\jce.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\charsets.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\lib\jfr.jar;C:\Users\Marci\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\183.4588.61\jre64\classes;C:/Programy/Java/jdk-11.0.1/lib/jfxrt.jar" />
+    </option>
+  </component>
+</project>
