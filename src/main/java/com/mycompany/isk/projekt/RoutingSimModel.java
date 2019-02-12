@@ -6,7 +6,6 @@
 package com.mycompany.isk.projekt;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
@@ -27,46 +26,81 @@ public class RoutingSimModel {
     RoutingData routingData;
     Boolean isChanged;
 
-    Map<RoutingEntry, Long> entryMetric = new HashMap<>();
+    public Map<RoutingEntry, Long> entryMetric = new HashMap<>();
 
 
     public void doSim(long iteration) {
         for (int i = 0; i < iteration; i++) {
+            entryMetric = new HashMap<>();
             for (Router router : routingData.getRouters()) {
                 for (RoutingEntry re : router.getRoutingTable()) {
                     if (setMetricToThis(router, re)) continue;
+
+
                     List<Link> linksOfRouter = routingData.getLinks().stream().filter(link -> link.getIdServerOne().equals(router.getId()) /*|| link.getIdServerTwo().equals(router.getId())*/)
                             .filter(Link::getIsWorking).collect(Collectors.toList());
                     if (setMetricToNext(re, linksOfRouter)) continue;
-                    setMetricToOther(re, linksOfRouter);
-//                    List<Link> linksOfRouterBack = routingData.getLinks().stream().filter(link -> link.getIdServerTwo().equals(router.getId()) /*|| link.getIdServerTwo().equals(router.getId())*/)
+
+                    setMetricToOtherNext(re, linksOfRouter);
+
+
+//                    List<Link> linksOfRouter2 = routingData.getLinks().stream().filter(link -> link.getIdServerTwo().equals(router.getId()) /*|| link.getIdServerTwo().equals(router.getId())*/)
 //                            .filter(Link::getIsWorking).collect(Collectors.toList());
-//                    if (setMetricToNext(re, linksOfRouterBack)) continue;
-//                    setMetricToOther(re, linksOfRouterBack);
+//                    if (setMetricToPrevious(re, linksOfRouter2)) continue;
+//                    setMetricToOtherPrevious(re, linksOfRouter2);
+
+
                 }
             }
+            entryMetric.forEach(RoutingEntry::setMetric);
+            System.out.println(entryMetric.toString());
         }
     }
 
-    private void setMetricToOther(RoutingEntry re, List<Link> linksOfRouter) {
+    private void setMetricToOtherNext(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
-            Optional<Router> collect = routingData.getRouters().stream().filter(r -> r.getId().equals(link.getIdServerOne())).findAny();//jeden
+            Optional<Router> collect = routingData.getRouters().stream().filter(r -> r.getId().equals(link.getIdServerTwo())).findAny();//jeden
             if (collect.isPresent()) {
                 Router router2 = collect.get();
                 Optional<RoutingEntry> any = router2.getRoutingTable().stream().filter(x -> x.getNetworkDestination().equals(re.getNetworkDestination())).findAny();
                 if (any.isPresent()) {
                     RoutingEntry routingEntry = any.get();
-                    re.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
+                    entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+//                    re.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
                 }
             }
 
         }
     }
+//    private void setMetricToOtherPrevious(RoutingEntry re, List<Link> linksOfRouter) {
+//        for (Link link : linksOfRouter) {
+//            Optional<Router> collect = routingData.getRouters().stream().filter(r -> r.getId().equals(link.getIdServerTwo())).findAny();//jeden nie wiem
+//            if (collect.isPresent()) {
+//                Router currentRouter = collect.get();
+//                Optional<RoutingEntry> any = currentRouter.getRoutingTable().stream().filter(x -> x.getNetworkDestination().equals(re.getNetworkDestination())).findAny();
+//                if (any.isPresent()) {
+//                    RoutingEntry routingEntry = any.get();
+//                    entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
+////                    re.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
+//                }
+//            }
+//
+//        }
+//    }
 
+    private boolean setMetricToPrevious(RoutingEntry re, List<Link> linksOfRouter) {
+        for (Link link : linksOfRouter) {
+            if (re.getNetworkDestination().equals(link.getIdServerOne())) {
+                entryMetric.put(re, 1L);
+                return true;
+            }
+        }
+        return false;
+    }
     private boolean setMetricToNext(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
             if (re.getNetworkDestination().equals(link.getIdServerTwo())) {
-                re.setMetric(1L);
+                entryMetric.put(re, 1L);
                 return true;
             }
         }
@@ -75,7 +109,6 @@ public class RoutingSimModel {
 
     private boolean setMetricToThis(Router router, RoutingEntry re) {
         if (re.getNetworkDestination().equals(router.getId())) {
-//            re.setMetric(0L);
             entryMetric.put(re, 0L);
             return true;
         }

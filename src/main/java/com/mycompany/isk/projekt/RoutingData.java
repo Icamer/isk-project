@@ -28,14 +28,17 @@ public class RoutingData implements Serializable{
     Long iteration;
 
     public void fillRoutingTables() {
+        Long hash = 0L;
         for (Router router : routers) {
             List<RoutingEntry> routingTable = new ArrayList<>();
             for (Link link : links) {
                 routingTable.add(RoutingEntry.builder()
-                        .networkDestination(link.getLinkId())
+                        .hash(hash)
+                        .networkDestination(link.getLinkId())//todo:zmiana
                         .iteration(0L)
                         .metric(100000L)
                         .build());
+                hash++;
             }
             router.setRoutingTable(routingTable);
         }

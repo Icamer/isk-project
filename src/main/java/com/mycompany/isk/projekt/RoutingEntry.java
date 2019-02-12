@@ -21,11 +21,12 @@ import lombok.NoArgsConstructor;
 
 public class RoutingEntry {
 
-    Long networkDestination;
 //    String netmask;
 //    String gateway;
-    Long interfaceId;
+    Long networkDestination;
     Long metric;
-    Long iteration;
 
+    Long iteration;
+    Long interfaceId;
+    Long hash;
 }
