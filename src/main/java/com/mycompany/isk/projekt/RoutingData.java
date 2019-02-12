@@ -34,6 +34,7 @@ public class RoutingData implements Serializable{
             for (Router targetRouter : routers) {
                 routingTable.add(RoutingEntry.builder()
                         .hash(hash)
+                        .thisRouterId(router.getId())
                         .networkDestination(targetRouter.getId())//todo:zmiana
                         .iteration(0L)
                         .metric(100000L)

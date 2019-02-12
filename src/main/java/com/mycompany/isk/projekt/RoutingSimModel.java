@@ -36,18 +36,16 @@ public class RoutingSimModel {
                 for (RoutingEntry re : router.getRoutingTable()) {
                     if (setMetricToThis(router, re)) continue;
 
-
-                    List<Link> linksOfRouter = routingData.getLinks().stream().filter(link -> link.getIdServerOne().equals(router.getId()) /*|| link.getIdServerTwo().equals(router.getId())*/)
-                            .filter(Link::getIsWorking).collect(Collectors.toList());
+                    List<Link> linksOfRouter = getLinksForward(router);
                     if (setMetricToNext(re, linksOfRouter)) continue;
 
+                    List<Link> linksOfRouter2 = getLinksBackwards(router);
+                    if (setMetricToPrevious(re, linksOfRouter2)) continue;
+
+                    // if (
                     setMetricToOtherNext(re, linksOfRouter);
-
-
-//                    List<Link> linksOfRouter2 = routingData.getLinks().stream().filter(link -> link.getIdServerTwo().equals(router.getId()) /*|| link.getIdServerTwo().equals(router.getId())*/)
-//                            .filter(Link::getIsWorking).collect(Collectors.toList());
-//                    if (setMetricToPrevious(re, linksOfRouter2)) continue;
-//                    setMetricToOtherPrevious(re, linksOfRouter2);
+                    //)// continue;
+                    setMetricToOtherPrevious(re, linksOfRouter2);
 
 
                 }
@@ -57,36 +55,55 @@ public class RoutingSimModel {
         }
     }
 
-    private void setMetricToOtherNext(RoutingEntry re, List<Link> linksOfRouter) {
+    private List<Link> getLinksForward(Router router) {
+        return routingData.getLinks().stream()
+                .filter(link -> link.getIdServerOne().equals(router.getId()))
+                .filter(Link::getIsWorking).collect(Collectors.toList());
+    }
+
+    private List<Link> getLinksBackwards(Router router) {
+        return routingData.getLinks().stream()
+                .filter(link -> link.getIdServerTwo().equals(router.getId()))
+                .filter(Link::getIsWorking).collect(Collectors.toList());
+    }
+
+    private boolean setMetricToOtherNext(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
             Optional<Router> collect = routingData.getRouters().stream().filter(r -> r.getId().equals(link.getIdServerTwo())).findAny();//jeden
-            if (collect.isPresent()) {
-                Router router2 = collect.get();
-                Optional<RoutingEntry> any = router2.getRoutingTable().stream().filter(x -> x.getNetworkDestination().equals(re.getNetworkDestination())).findAny();
-                if (any.isPresent()) {
-                    RoutingEntry routingEntry = any.get();
-                    entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
-//                    re.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
-                }
-            }
-
+            if (setMetricToOtherCommon(re, collect)) return true;
         }
+        return false;
     }
-//    private void setMetricToOtherPrevious(RoutingEntry re, List<Link> linksOfRouter) {
-//        for (Link link : linksOfRouter) {
-//            Optional<Router> collect = routingData.getRouters().stream().filter(r -> r.getId().equals(link.getIdServerTwo())).findAny();//jeden nie wiem
-//            if (collect.isPresent()) {
-//                Router currentRouter = collect.get();
-//                Optional<RoutingEntry> any = currentRouter.getRoutingTable().stream().filter(x -> x.getNetworkDestination().equals(re.getNetworkDestination())).findAny();
-//                if (any.isPresent()) {
-//                    RoutingEntry routingEntry = any.get();
-//                    entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
-////                    re.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() : re.getMetric());
-//                }
-//            }
-//
-//        }
-//    }
+
+    private boolean setMetricToOtherPrevious(RoutingEntry re, List<Link> linksOfRouter) {
+        for (Link link : linksOfRouter) {
+            Optional<Router> collect = routingData.getRouters().stream().filter(r -> r.getId().equals(link.getIdServerOne())).findAny();//jeden
+            if (setMetricToOtherCommon(re, collect)) return true;
+        }
+        return false;
+    }
+
+    private boolean setMetricToOtherCommon(RoutingEntry re, Optional<Router> collect) {
+        if (collect.isPresent()) {
+            Router router2 = collect.get();
+            Optional<RoutingEntry> any = router2.getRoutingTable().stream().filter(x -> x.getNetworkDestination().equals(re.getNetworkDestination())).findAny();
+            if (any.isPresent()) {
+                RoutingEntry routingEntry = any.get();
+                if (entryMetric.get(re) != null) {
+                    Long metricValueInEntryMetric = entryMetric.get(re);
+                    Long metricValueToGet = routingEntry.getMetric();
+                    if (metricValueToGet < metricValueInEntryMetric) {
+                        entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+                    }
+                } else {
+                    entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private boolean setMetricToPrevious(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
@@ -97,6 +114,7 @@ public class RoutingSimModel {
         }
         return false;
     }
+
     private boolean setMetricToNext(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
             if (re.getNetworkDestination().equals(link.getIdServerTwo())) {

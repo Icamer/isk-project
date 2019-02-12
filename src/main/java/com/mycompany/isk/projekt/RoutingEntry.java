@@ -25,6 +25,7 @@ public class RoutingEntry {
 //    String gateway;
     Long networkDestination;
     Long metric;
+    Long thisRouterId;
 
     Long iteration;
     Long interfaceId;
