@@ -29,9 +29,14 @@ public class RoutingSimModel {
     public Map<RoutingEntry, Long> entryMetric = new HashMap<>();
 
 
-    public void doSim(long iteration) {
+    public void doSim(long iteration, long breakIteration, long brokenLinkId) {
         for (int i = 0; i < iteration; i++) {
             entryMetric = new HashMap<>();
+            if(i == breakIteration){
+                Link brokenLink = routingData.getLinks().stream().filter(x -> x.getLinkId().equals(brokenLinkId)).findAny().get();
+                brokenLink.setIsWorking(false);
+//                routingData.getRouters().stream().filter(x->x.getId().equals(brokenLink.getIdServerOne()) || x.getId().equals(brokenLink.getIdServerTwo())).forEach();
+            }
             for (Router router : routingData.getRouters()) {
                 for (RoutingEntry re : router.getRoutingTable()) {
                     if (setMetricToThis(router, re)) continue;
@@ -42,9 +47,7 @@ public class RoutingSimModel {
                     List<Link> linksOfRouter2 = getLinksBackwards(router);
                     if (setMetricToPrevious(re, linksOfRouter2)) continue;
 
-                    // if (
                     setMetricToOtherNext(re, linksOfRouter);
-                    //)// continue;
                     setMetricToOtherPrevious(re, linksOfRouter2);
 
 
