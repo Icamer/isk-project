@@ -31,10 +31,10 @@ public class RoutingData implements Serializable{
         Long hash = 0L;
         for (Router router : routers) {
             List<RoutingEntry> routingTable = new ArrayList<>();
-            for (Link link : links) {
+            for (Router targetRouter : routers) {
                 routingTable.add(RoutingEntry.builder()
                         .hash(hash)
-                        .networkDestination(link.getLinkId())//todo:zmiana
+                        .networkDestination(targetRouter.getId())//todo:zmiana
                         .iteration(0L)
                         .metric(100000L)
                         .build());
