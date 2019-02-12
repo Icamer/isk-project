@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class Link {
-    String linkId;
+    Long linkId;
     Long idServerOne;
     Long idServerTwo;
     Boolean isWorking;

@@ -5,10 +5,17 @@
         }, 
         {
             "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
         }
     ],
     "iteration": 0,
     "links": [
+
         {
             "linkId": 0,
             "idServerOne": 0,
@@ -18,7 +25,13 @@
         {
             "linkId": 1,
             "idServerOne": 1,
-            "idServerTwo": 0,
+            "idServerTwo": 2,
+            "isWorking": "true"
+        },
+        {
+            "linkId": 2,
+            "idServerOne": 2,
+            "idServerTwo": 3,
             "isWorking": "true"
         }
     ]

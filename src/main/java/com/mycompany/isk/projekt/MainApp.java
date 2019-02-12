@@ -18,17 +18,11 @@ public class MainApp extends Application {
         JsonMapping jsonMapping = new JsonMapping();
         RoutingData routingData = jsonMapping.getRoutingData();
         routingData.fillRoutingTables();
-        jsonMapping.saveRoutingData(routingData);
-        RoutingSimModel routingSimModel = new RoutingSimModel(routingData, false);
-        while (true) {
-            System.out.println(routingData.getIteration() + "\n");
-            routingSimModel.simulate();
-            RoutingData routingDataSerialized = jsonMapping.getRoutingData(SRC_MAIN_RESOURCES_OUTPUT_JSON);
-            jsonMapping.saveRoutingData(routingData);
-            if (Boolean.FALSE.equals(routingSimModel.getIsChanged())) {
-                break;
-            }
-        }
+
+        RoutingSimModel rsm = new RoutingSimModel().builder().routingData(routingData).build();
+        rsm.doSim(5L);
+        rsm.getRoutingData();
+
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
 

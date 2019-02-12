@@ -62,8 +62,8 @@ public class FXMLController implements Initializable {
 
     public ObservableList<RoutingEntry> mockEntries() {
         ObservableList<RoutingEntry> entrys = FXCollections.observableArrayList();
-        entrys.add(new RoutingEntry("d1", 1L, 5L, 0L));
-        entrys.add(new RoutingEntry("r6", 0L, 10L, 0L));
+//        entrys.add(new RoutingEntry("d1", 1L, 5L, 0L));
+//        entrys.add(new RoutingEntry("r6", 0L, 10L, 0L));
         return entrys;
     }
 }
