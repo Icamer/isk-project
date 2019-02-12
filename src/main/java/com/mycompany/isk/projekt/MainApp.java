@@ -20,7 +20,7 @@ public class MainApp extends Application {
         routingData.fillRoutingTables();
 
         RoutingSimModel rsm = new RoutingSimModel().builder().routingData(routingData).build();
-        rsm.doSim(20L, 15L, 2L);
+        rsm.doSim(100L, 15L, 2L);
         rsm.getRoutingData();
 
 

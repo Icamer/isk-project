@@ -26,13 +26,14 @@ public class RoutingSimModel {
     RoutingData routingData;
     Boolean isChanged;
 
-    public Map<RoutingEntry, Long> entryMetric = new HashMap<>();
+    public Map<RoutingEntry, Metric> entryMetric = new HashMap<>();
+//    public Map<RoutingEntry, Long> entryMetric = new HashMap<>();
 
 
     public void doSim(long iteration, long breakIteration, long brokenLinkId) {
         for (int i = 0; i < iteration; i++) {
             entryMetric = new HashMap<>();
-            if(i == breakIteration){
+            if (i == breakIteration) {
                 Link brokenLink = routingData.getLinks().stream().filter(x -> x.getLinkId().equals(brokenLinkId)).findAny().get();
                 brokenLink.setIsWorking(false);
 //                routingData.getRouters().stream().filter(x->x.getId().equals(brokenLink.getIdServerOne()) || x.getId().equals(brokenLink.getIdServerTwo())).forEach();
@@ -53,8 +54,10 @@ public class RoutingSimModel {
 
                 }
             }
-            entryMetric.forEach(RoutingEntry::setMetric);
-            System.out.println(entryMetric.toString());
+            entryMetric.forEach((routingEntry, metric) -> {
+                routingEntry.setMetric(metric.getMetric());
+                routingEntry.setThrough(metric.getRouterId());
+            });
         }
     }
 
@@ -93,13 +96,34 @@ public class RoutingSimModel {
             if (any.isPresent()) {
                 RoutingEntry routingEntry = any.get();
                 if (entryMetric.get(re) != null) {
-                    Long metricValueInEntryMetric = entryMetric.get(re);
+                    Long metricValueInEntryMetric = entryMetric.get(re).getMetric();
                     Long metricValueToGet = routingEntry.getMetric();
                     if (metricValueToGet < metricValueInEntryMetric) {
-                        entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+                        Metric metric = new Metric();
+                        metric.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+//                        metric.setRouterId(re.getThisRouterId() < routingEntry.getThisRouterId() ? re.getThisRouterId() + 1 : re.getThisRouterId() - 1);
+                        Long id = 0L;
+                        boolean check = re.getMetric() > routingEntry.getMetric();
+                        if (check) {
+                            id = re.getThisRouterId() < routingEntry.getThisRouterId() ? re.getThisRouterId() + 1 : re.getThisRouterId() - 1;
+                        } else {
+                            id = re.getThrough();
+                        }
+                        metric.setRouterId(id);
+                        entryMetric.put(re, metric);
                     }
                 } else {
-                    entryMetric.put(re, re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+                    Metric metric = new Metric();
+                    metric.setMetric(re.getMetric() > routingEntry.getMetric() ? routingEntry.getMetric() + 1 : re.getMetric());
+                    Long id = 0L;
+                    boolean check = re.getMetric() > routingEntry.getMetric();
+                    if (check) {
+                        id = re.getThisRouterId() < routingEntry.getThisRouterId() ? re.getThisRouterId() + 1 : re.getThisRouterId() - 1;
+                    } else {
+                        id = re.getThrough();
+                    }
+                    metric.setRouterId(id);
+                    entryMetric.put(re, metric);
                 }
                 return true;
             }
@@ -111,7 +135,7 @@ public class RoutingSimModel {
     private boolean setMetricToPrevious(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
             if (re.getNetworkDestination().equals(link.getIdServerOne())) {
-                entryMetric.put(re, 1L);
+                entryMetric.put(re, new Metric(1L, link.getIdServerOne()));
                 return true;
             }
         }
@@ -121,7 +145,7 @@ public class RoutingSimModel {
     private boolean setMetricToNext(RoutingEntry re, List<Link> linksOfRouter) {
         for (Link link : linksOfRouter) {
             if (re.getNetworkDestination().equals(link.getIdServerTwo())) {
-                entryMetric.put(re, 1L);
+                entryMetric.put(re, new Metric(1L, link.getIdServerTwo()));
                 return true;
             }
         }
@@ -130,7 +154,7 @@ public class RoutingSimModel {
 
     private boolean setMetricToThis(Router router, RoutingEntry re) {
         if (re.getNetworkDestination().equals(router.getId())) {
-            entryMetric.put(re, 0L);
+            entryMetric.put(re, new Metric(0L, router.getId()));
             return true;
         }
         return false;

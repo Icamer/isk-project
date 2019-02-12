@@ -24,8 +24,9 @@ public class RoutingEntry {
 //    String netmask;
 //    String gateway;
     Long networkDestination;
-    Long metric;
     Long thisRouterId;
+    Long metric;
+    Long through;
 
     Long iteration;
     Long interfaceId;
