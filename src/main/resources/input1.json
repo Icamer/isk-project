@@ -6,27 +6,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "1",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "2",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "3",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           }
         ]
       },
@@ -35,27 +27,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "1",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "2",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "3",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           }
         ]
       },
@@ -64,27 +48,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "1",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "2",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "3",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           }
         ]
       },
@@ -93,27 +69,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "1",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "2",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           },
           {
             "networkDestination": "3",
-            "interfaceId": null,
-            "metric": 100000,
-            "iteration": 0
+            "metric": 100000
           }
         ]
       }
@@ -139,5 +107,475 @@
       }
     ],
     "iteration": 0
+  },
+
+
+
+
+
+
+
+  {
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "3",
+            "metric": 100000
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 100000
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 0
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "1",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ],
+    "iteration": 1
+  }
+
+
+
+
+
+,
+
+
+
+
+
+
+
+  {
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 100000
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 0
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ],
+    "iteration": 2
+  },
+
+
+
+
+
+
+
+  {
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 0
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ],
+    "iteration": 4
+  },
+
+
+
+
+
+
+
+  {
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 0
+          },
+          {
+            "networkDestination": "3",
+            "metric": 100000
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "1",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "2",
+            "metric": 100000
+          },
+          {
+            "networkDestination": "3",
+            "metric": 0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": false
+      }
+    ],
+    "iteration": 5
   }
 ]

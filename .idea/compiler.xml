@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="isk-projekt" options="-bootclasspath E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\resources.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\rt.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\sunrsasign.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\jsse.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\jce.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\charsets.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\jfr.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\classes;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64/lib/jfxrt.jar" />
+      <module name="isk-projekt" options="-bootclasspath E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\resources.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\rt.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\sunrsasign.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\jsse.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\jce.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\charsets.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\lib\jfr.jar;E:\Programy\jetbrains\apps\IDEA-U\ch-0\182.5107.16\jre64\classes;E:/Programowanie/Java/jdk1.8.0_181/jre/lib/jfxrt.jar" />
     </option>
   </component>
 </project>
