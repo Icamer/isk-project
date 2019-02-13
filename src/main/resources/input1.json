@@ -1,0 +1,143 @@
+[
+  {
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "1",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "2",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "3",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "1",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "2",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "3",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "1",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "2",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "3",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "1",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "2",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          },
+          {
+            "networkDestination": "3",
+            "interfaceId": null,
+            "metric": 100000,
+            "iteration": 0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ],
+    "iteration": 0
+  }
+]

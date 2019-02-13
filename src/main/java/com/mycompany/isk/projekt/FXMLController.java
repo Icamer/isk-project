@@ -1,6 +1,7 @@
 package com.mycompany.isk.projekt;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
@@ -59,6 +60,8 @@ public class FXMLController implements Initializable {
     @FXML
     private Spinner spinner;
     @FXML
+    private Spinner iterationSpinner;
+    @FXML
     private Spinner breakSpinner;
 
     RoutingSimModel routingSimModel;
@@ -76,28 +79,49 @@ public class FXMLController implements Initializable {
     }
 
     @FXML
-    private void sim1Action(ActionEvent event){
+    private void sim1Action(ActionEvent event) {
         sim2.setDisable(!sim2.isDisable());
         sim3.setDisable(!sim3.isDisable());
         button.setDisable(!button.isDisable());
+        breakSpinner.setDisable(!breakSpinner.isDisable());
+        spinner.setDisable(!spinner.isDisable());
+        iterationSpinner.setDisable(!iterationSpinner.isDisable());
     }
-    @FXML
-    private void sim2Action(ActionEvent ae){
 
+    @FXML
+    private void sim2Action(ActionEvent ae) {
+        System.out.println("You clicked me!");
+        label.setText("Iterations: " + spinner.getValue());
+        routingSimModel = RoutingSimModel.builder().build();
+        RoutingData[] routingData = new JsonMapping().getRoutingData(true);
+        RoutingData routingData1 = Arrays.stream(routingData).filter(x -> (x.getIteration().longValue()) == (new Long((Integer)iterationSpinner.getValue()).longValue())).findAny().get();
+        routingSimModel.setRoutingData(routingData1);
+        dataTable1.clear();
+        dataTable2.clear();
+        fillTableOne(routingSimModel);
+        fillSecondTable(routingSimModel);
     }
-    @FXML
-    private void sim3Action(ActionEvent ae){
 
+    @FXML
+    private void sim3Action(ActionEvent ae) {
+        System.out.println("You clicked me!");
+        label.setText("Iterations: " + spinner.getValue());
+        routingSimModel = RoutingSimModel.builder().build();
+        new JsonMapping().getRoutingData(false);
+        dataTable1.clear();
+        dataTable2.clear();
+        fillSecondTable(routingSimModel);
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        RoutingSimModel rsm = getRoutingSimModel( (Integer) breakSpinner.getValue(), -1);
+        RoutingSimModel rsm = getRoutingSimModel((Integer) breakSpinner.getValue(), -1);
 
 
         spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 0));
         breakSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(-1, rsm.getRoutingData().getLinks().size(), 0));
+        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 15, 0));
 
         dataTable1 = FXCollections.observableArrayList();
         dataTable2 = FXCollections.observableArrayList();
@@ -123,16 +147,20 @@ public class FXMLController implements Initializable {
         routerId.setCellValueFactory(new PropertyValueFactory<>("routerId"));
         linkIds.setCellValueFactory(new PropertyValueFactory<>("linkIds"));
 
+        fillTableOne(rsm);
+    }
+
+    private void fillTableOne(RoutingSimModel rsm) {
         for (Router router : rsm.getRoutingData().getRouters()) {
             List<Link> collect = rsm.getRoutingData().getLinks().stream().filter(x -> x.getIdServerTwo().equals(router.getId()) || x.getIdServerOne().equals(router.getId())).collect(Collectors.toList());
-            StringBuilder ids= new StringBuilder();
+            StringBuilder ids = new StringBuilder();
             ids.append("links: ");
-            collect.forEach(x->ids.append(x.getLinkId() + ", "));
+            collect.forEach(x -> ids.append(x.getLinkId() + ", "));
             dataTable1.add(new DataTable1(router.getId(), ids.toString()));
         }
         table_1.setItems(dataTable1);
         table_1.setOnMouseClicked(x -> {
-            if(routingSimModel == null){
+            if (routingSimModel == null) {
                 fillSecondTable(rsm);
             } else {
                 fillSecondTable(routingSimModel);
