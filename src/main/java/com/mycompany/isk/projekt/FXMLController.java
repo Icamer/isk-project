@@ -121,7 +121,7 @@ public class FXMLController implements Initializable {
 
         spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 0));
         breakSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(-1, rsm.getRoutingData().getLinks().size(), 0));
-        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 15, 0));
+        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 0));
 
         dataTable1 = FXCollections.observableArrayList();
         dataTable2 = FXCollections.observableArrayList();
