@@ -24,6 +24,18 @@ public class FXMLController implements Initializable {
     private Label label;
 
     @FXML
+    private Button button;
+
+    @FXML
+    private Button sim1;
+
+    @FXML
+    private Button sim2;
+
+    @FXML
+    private Button sim3;
+
+    @FXML
     private TableView<DataTable1> table_1;
 
     @FXML
@@ -60,6 +72,21 @@ public class FXMLController implements Initializable {
 //        dataTable1.clear();
         dataTable2.clear();
         fillSecondTable(routingSimModel);
+
+    }
+
+    @FXML
+    private void sim1Action(ActionEvent event){
+        sim2.setDisable(!sim2.isDisable());
+        sim3.setDisable(!sim3.isDisable());
+        button.setDisable(!button.isDisable());
+    }
+    @FXML
+    private void sim2Action(ActionEvent ae){
+
+    }
+    @FXML
+    private void sim3Action(ActionEvent ae){
 
     }
 

@@ -15,7 +15,7 @@
             <TableColumn fx:id="metric" prefWidth="71.0" text="metric" />
             <TableColumn fx:id="through" prefWidth="91.0" text="through" />
          </columns></TableView>
-        <Button fx:id="button" layoutX="281.0" layoutY="430.0" onAction="#handleButtonAction" text="Calculate" />
+        <Button fx:id="button" layoutX="168.0" layoutY="430.0" onAction="#handleButtonAction" prefHeight="84.0" prefWidth="95.0" text="Calculate" />
         <Label fx:id="label" layoutX="181.0" layoutY="425.0" minHeight="16" minWidth="69" />
       <TableView fx:id="table_1" prefHeight="400.0" prefWidth="263.0">
         <columns>
@@ -27,5 +27,8 @@
       <Label layoutX="8.0" layoutY="408.0" prefHeight="17.0" prefWidth="149.0" text="Input amount of iterations" />
       <Label layoutX="8.0" layoutY="473.0" prefHeight="17.0" prefWidth="149.0" text="Input link to break" />
       <Spinner fx:id="breakSpinner" layoutX="8.0" layoutY="490.0" />
+      <Button fx:id="sim1" layoutX="330.0" layoutY="431.0" mnemonicParsing="false" onAction="#sim1Action" prefHeight="84.0" prefWidth="141.0" text="Change Sim Mode" />
+      <Button fx:id="sim2" disable="true" layoutX="488.0" layoutY="431.0" mnemonicParsing="false" onAction="#sim2Action" prefHeight="84.0" prefWidth="69.0" text="Sim1" />
+      <Button fx:id="sim3" disable="true" layoutX="557.0" layoutY="431.0" mnemonicParsing="false" onAction="#sim3Action" prefHeight="84.0" prefWidth="69.0" text="Sim2" />
     </children>
 </AnchorPane>
