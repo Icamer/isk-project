@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.isk.projekt.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.isk.projekt.FXMLController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-        <TableView fx:id="tableView">
-        </TableView>
+        <TableView fx:id="table_2" layoutX="334.0" prefHeight="400.0" prefWidth="293.0" AnchorPane.leftAnchor="334.0">
+         <columns>
+            <TableColumn fx:id="networkDestination" prefWidth="130.0" text="networkDestination" />
+            <TableColumn fx:id="metric" prefWidth="71.0" text="metric" />
+            <TableColumn fx:id="through" prefWidth="91.0" text="through" />
+         </columns></TableView>
+        <Button fx:id="button" layoutX="281.0" layoutY="430.0" onAction="#handleButtonAction" text="Calculate" />
+        <Label fx:id="label" layoutX="181.0" layoutY="425.0" minHeight="16" minWidth="69" />
+      <TableView fx:id="table_1" prefHeight="400.0" prefWidth="263.0">
+        <columns>
+          <TableColumn fx:id="routerId" prefWidth="127.0" text="routerId" />
+          <TableColumn fx:id="linkIds" prefWidth="135.0" text="linkIds" />
+        </columns>
+      </TableView>
+      <Spinner fx:id="spinner" layoutX="8.0" layoutY="430.0" />
+      <Label layoutX="8.0" layoutY="408.0" prefHeight="17.0" prefWidth="149.0" text="Input amount of iterations" />
+      <Label layoutX="8.0" layoutY="473.0" prefHeight="17.0" prefWidth="149.0" text="Input link to break" />
+      <Spinner fx:id="breakSpinner" layoutX="8.0" layoutY="490.0" />
     </children>
 </AnchorPane>

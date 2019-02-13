@@ -7,6 +7,8 @@ package com.mycompany.isk.projekt;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+
 import org.codehaus.jackson.map.ObjectMapper;
 
 /**
@@ -16,7 +18,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 public class JsonMapping {
 
     private static final String SRC_MAIN_RESOURCES_INPUT_JSON = "src/main/resources/input.json";
-    private static final String SRC_MAIN_RESOURCES_OUTPUT_JSON = "src/main/resources/output2.json";
+    private static final String SRC_MAIN_RESOURCES_OUTPUT_JSON = "src/main/resources/output.json";
 
     ObjectMapper mapper = new ObjectMapper();
 
@@ -41,7 +43,7 @@ public class JsonMapping {
     public void saveRoutingData(RoutingData obj) {
 
         try {
-            mapper.writeValue(new File(SRC_MAIN_RESOURCES_OUTPUT_JSON), obj);
+            mapper.writeValue(new File(SRC_MAIN_RESOURCES_OUTPUT_JSON.replace("output","output" + new Date().getTime())), obj);
         } catch (IOException ex) {
             System.out.println("output ex: " + ex);
         }

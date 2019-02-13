@@ -15,13 +15,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        JsonMapping jsonMapping = new JsonMapping();
-        RoutingData routingData = jsonMapping.getRoutingData();
-        routingData.fillRoutingTables();
 
-        RoutingSimModel rsm = new RoutingSimModel().builder().routingData(routingData).build();
-        rsm.doSim(100L, 15L, 2L);
-        rsm.getRoutingData();
 
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
