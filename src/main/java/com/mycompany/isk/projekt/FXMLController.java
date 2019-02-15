@@ -1,6 +1,7 @@
 package com.mycompany.isk.projekt;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -66,6 +67,8 @@ public class FXMLController implements Initializable {
 
     RoutingSimModel routingSimModel;
 
+    DataTable1 selectedItem = null;
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -90,14 +93,18 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void sim2Action(ActionEvent ae) {
+        simAction();
+    }
+
+    private void simAction() {
         System.out.println("You clicked me!");
-        label.setText("Iterations: " + spinner.getValue());
+//        label.setText("Iterations: " + spinner.getValue());
         routingSimModel = RoutingSimModel.builder().build();
         RoutingData[] routingData = new JsonMapping().getRoutingData(true);
         RoutingData routingData1 = Arrays.stream(routingData).filter(x -> (x.getIteration().longValue()) == (new Long((Integer)iterationSpinner.getValue()).longValue())).findAny().get();
         routingSimModel.setRoutingData(routingData1);
         dataTable1.clear();
-        dataTable2.clear();
+//        dataTable2.clear();
         fillTableOne(routingSimModel);
         fillSecondTable(routingSimModel);
     }
@@ -121,7 +128,10 @@ public class FXMLController implements Initializable {
 
         spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 0));
         breakSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(-1, rsm.getRoutingData().getLinks().size(), 0));
-        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 0));
+        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 17, 0));
+        iterationSpinner.setOnMouseReleased(x-> {
+            simAction();
+        });
 
         dataTable1 = FXCollections.observableArrayList();
         dataTable2 = FXCollections.observableArrayList();
@@ -160,6 +170,7 @@ public class FXMLController implements Initializable {
         }
         table_1.setItems(dataTable1);
         table_1.setOnMouseClicked(x -> {
+            selectedItem = table_1.getSelectionModel().getSelectedItems().stream().findAny().orElseGet(null);
             if (routingSimModel == null) {
                 fillSecondTable(rsm);
             } else {
@@ -170,7 +181,7 @@ public class FXMLController implements Initializable {
 
     private void fillSecondTable(RoutingSimModel rsm) {
         dataTable2.clear();
-        for (DataTable1 dataTable1 : table_1.getSelectionModel().getSelectedItems()) {
+        for (DataTable1 dataTable1 : table_1.getSelectionModel().getSelectedItems().isEmpty() ? Arrays.asList(selectedItem) : table_1.getSelectionModel().getSelectedItems()) {
             rsm.getRoutingData().getRouters().stream().filter(x -> x.getId().equals(dataTable1.getRouterId())).forEach(x -> {
                 x.getRoutingTable().forEach(y -> {
                     dataTable2.add(new DataTable2(y.getNetworkDestination(), y.getMetric(), y.getThrough()));
