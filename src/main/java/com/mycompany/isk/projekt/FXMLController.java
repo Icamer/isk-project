@@ -1,11 +1,8 @@
 package com.mycompany.isk.projekt;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,125 +15,102 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class FXMLController implements Initializable {
 
 
-    private ObservableList<DataTable1> dataTable1;
-    private ObservableList<DataTable2> dataTable2;
-
-
-    @FXML
-    private Label label;
-
-    @FXML
-    private Button button;
+    private ObservableList<Data> dataTable1;
+    private ObservableList<Data> dataTable2;
+    private ObservableList<Data> dataTable3;
+    private ObservableList<Data> dataTable4;
+    private ObservableList<Data> dataTable5;
 
     @FXML
-    private Button sim1;
+    private TableView<Data> tab1;
+    @FXML
+    private TableView<Data> tab2;
+    @FXML
+    private TableView<Data> tab3;
+    @FXML
+    private TableView<Data> tab4;
+    @FXML
+    private TableView<Data> tab5;
 
     @FXML
-    private Button sim2;
+    private TableColumn<RoutingEntry, Long> t1c1;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t1c2;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t1c3;
 
     @FXML
-    private Button sim3;
+    private TableColumn<RoutingEntry, Long> t2c1;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t2c2;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t2c3;
 
     @FXML
-    private TableView<DataTable1> table_1;
+    private TableColumn<RoutingEntry, Long> t3c1;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t3c2;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t3c3;
 
     @FXML
-    private TableView<DataTable2> table_2;
+    private TableColumn<RoutingEntry, Long> t4c1;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t4c2;
+    @FXML
+    private TableColumn<RoutingEntry, Long> t4c3;
 
     @FXML
-    private TableColumn<RoutingEntry, Long> networkDestination;
-
+    private TableColumn<RoutingEntry, Long> t5c1;
     @FXML
-    private TableColumn<RoutingEntry, Long> metric;
-
+    private TableColumn<RoutingEntry, Long> t5c2;
     @FXML
-    private TableColumn<RoutingEntry, Long> through;
+    private TableColumn<RoutingEntry, Long> t5c3;
 
-    @FXML
-    private TableColumn<RoutingEntry, Long> routerId;
-
-    @FXML
-    private TableColumn<RoutingEntry, String> linkIds;
-
-    @FXML
-    private Spinner spinner;
     @FXML
     private Spinner iterationSpinner;
-    @FXML
-    private Spinner breakSpinner;
+    private RoutingSimModel routingSimModel;
 
-    RoutingSimModel routingSimModel;
-
-    DataTable1 selectedItem = null;
-
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Iterations: " + spinner.getValue());
-        routingSimModel = getRoutingSimModel((Integer) spinner.getValue(), (Integer) breakSpinner.getValue());
-        new JsonMapping().saveRoutingData(routingSimModel.getRoutingData());
-//        dataTable1.clear();
-        dataTable2.clear();
-        fillSecondTable(routingSimModel);
-
-    }
-
-    @FXML
-    private void sim1Action(ActionEvent event) {
-        sim2.setDisable(!sim2.isDisable());
-        sim3.setDisable(!sim3.isDisable());
-        button.setDisable(!button.isDisable());
-        breakSpinner.setDisable(!breakSpinner.isDisable());
-        spinner.setDisable(!spinner.isDisable());
-        iterationSpinner.setDisable(!iterationSpinner.isDisable());
-    }
 
     @FXML
     private void sim2Action(ActionEvent ae) {
-        simAction();
+        System.out.println("click me!");
+        fillData();
     }
 
-    private void simAction() {
-        System.out.println("You clicked me!");
-//        label.setText("Iterations: " + spinner.getValue());
+    private void fillData() {
         routingSimModel = RoutingSimModel.builder().build();
-        RoutingData[] routingData = new JsonMapping().getRoutingData(true);
-        RoutingData routingData1 = Arrays.stream(routingData).filter(x -> (x.getIteration().longValue()) == (new Long((Integer)iterationSpinner.getValue()).longValue())).findAny().get();
-        routingSimModel.setRoutingData(routingData1);
-        dataTable1.clear();
-//        dataTable2.clear();
-        fillTableOne(routingSimModel);
-        fillSecondTable(routingSimModel);
+        RoutingData[] routingDataArray = new JsonMapping().getRoutingData(true);
+        RoutingData routingData = Arrays.stream(routingDataArray).filter(x -> (x.getIteration().longValue()) == (new Long((Integer)iterationSpinner.getValue()).longValue())).findAny().get();
+        routingSimModel.setRoutingData(routingData);
+        clear();
+
     }
 
-    @FXML
-    private void sim3Action(ActionEvent ae) {
-        System.out.println("You clicked me!");
-        label.setText("Iterations: " + spinner.getValue());
-        routingSimModel = RoutingSimModel.builder().build();
-        new JsonMapping().getRoutingData(false);
+    private void clear() {
         dataTable1.clear();
         dataTable2.clear();
-        fillSecondTable(routingSimModel);
+        dataTable3.clear();
+        dataTable4.clear();
+        dataTable5.clear();
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        RoutingSimModel rsm = getRoutingSimModel((Integer) breakSpinner.getValue(), -1);
-
-
-        spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 0));
-        breakSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(-1, rsm.getRoutingData().getLinks().size(), 0));
         iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 17, 0));
         iterationSpinner.setOnMouseReleased(x-> {
-            simAction();
+            System.out.println("SPIN ME");
+            fillData();
         });
 
         dataTable1 = FXCollections.observableArrayList();
         dataTable2 = FXCollections.observableArrayList();
+        dataTable3 = FXCollections.observableArrayList();
+        dataTable4 = FXCollections.observableArrayList();
+        dataTable5 = FXCollections.observableArrayList();
 
-        createTable(rsm);
+        createTables();
     }
 
     private RoutingSimModel getRoutingSimModel(Integer iteration, Integer brokenLinkId) {
@@ -149,46 +123,28 @@ public class FXMLController implements Initializable {
         return rsm;
     }
 
-    private void createTable(RoutingSimModel rsm) {
-        networkDestination.setCellValueFactory(new PropertyValueFactory<>("networkDestination"));
-        metric.setCellValueFactory(new PropertyValueFactory<>("metric"));
+    private void createTables() {
+        t1c1.setCellValueFactory(new PropertyValueFactory<>("networkDestination"));
+        t1c2.setCellValueFactory(new PropertyValueFactory<>("metric"));
+        t1c3.setCellValueFactory(new PropertyValueFactory<>("through"));
 
-        through.setCellValueFactory(new PropertyValueFactory<>("through"));
-        routerId.setCellValueFactory(new PropertyValueFactory<>("routerId"));
-        linkIds.setCellValueFactory(new PropertyValueFactory<>("linkIds"));
+        t2c1.setCellValueFactory(new PropertyValueFactory<>("networkDestination"));
+        t2c2.setCellValueFactory(new PropertyValueFactory<>("metric"));
+        t2c3.setCellValueFactory(new PropertyValueFactory<>("through"));
 
-        fillTableOne(rsm);
+        t3c1.setCellValueFactory(new PropertyValueFactory<>("networkDestination"));
+        t3c2.setCellValueFactory(new PropertyValueFactory<>("metric"));
+        t3c3.setCellValueFactory(new PropertyValueFactory<>("through"));
+
+        t4c1.setCellValueFactory(new PropertyValueFactory<>("networkDestination"));
+        t4c2.setCellValueFactory(new PropertyValueFactory<>("metric"));
+        t4c3.setCellValueFactory(new PropertyValueFactory<>("through"));
+
+        t5c1.setCellValueFactory(new PropertyValueFactory<>("networkDestination"));
+        t5c2.setCellValueFactory(new PropertyValueFactory<>("metric"));
+        t5c3.setCellValueFactory(new PropertyValueFactory<>("through"));
     }
 
-    private void fillTableOne(RoutingSimModel rsm) {
-        for (Router router : rsm.getRoutingData().getRouters()) {
-            List<Link> collect = rsm.getRoutingData().getLinks().stream().filter(x -> x.getIdServerTwo().equals(router.getId()) || x.getIdServerOne().equals(router.getId())).collect(Collectors.toList());
-            StringBuilder ids = new StringBuilder();
-            ids.append("links: ");
-            collect.forEach(x -> ids.append(x.getLinkId() + ", "));
-            dataTable1.add(new DataTable1(router.getId(), ids.toString()));
-        }
-        table_1.setItems(dataTable1);
-        table_1.setOnMouseClicked(x -> {
-            selectedItem = table_1.getSelectionModel().getSelectedItems().stream().findAny().orElseGet(null);
-            if (routingSimModel == null) {
-                fillSecondTable(rsm);
-            } else {
-                fillSecondTable(routingSimModel);
-            }
-        });
-    }
 
-    private void fillSecondTable(RoutingSimModel rsm) {
-        dataTable2.clear();
-        for (DataTable1 dataTable1 : table_1.getSelectionModel().getSelectedItems().isEmpty() ? Arrays.asList(selectedItem) : table_1.getSelectionModel().getSelectedItems()) {
-            rsm.getRoutingData().getRouters().stream().filter(x -> x.getId().equals(dataTable1.getRouterId())).forEach(x -> {
-                x.getRoutingTable().forEach(y -> {
-                    dataTable2.add(new DataTable2(y.getNetworkDestination(), y.getMetric(), y.getThrough()));
-                });
-            });
-        }
-        table_2.setItems(dataTable2);
-    }
 
 }

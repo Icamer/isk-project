@@ -6,30 +6,57 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.isk.projekt.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.isk.projekt.FXMLController">
     <children>
-        <TableView fx:id="table_2" layoutX="334.0" prefHeight="400.0" prefWidth="293.0" AnchorPane.leftAnchor="334.0">
+        <TableView fx:id="table_2" layoutX="241.0" layoutY="271.0" prefHeight="260.0" prefWidth="293.0" AnchorPane.leftAnchor="241.0">
          <columns>
             <TableColumn fx:id="networkDestination" prefWidth="130.0" text="networkDestination" />
             <TableColumn fx:id="metric" prefWidth="71.0" text="metric" />
             <TableColumn fx:id="through" prefWidth="91.0" text="through" />
          </columns></TableView>
-        <Button fx:id="button" layoutX="168.0" layoutY="430.0" onAction="#handleButtonAction" prefHeight="84.0" prefWidth="95.0" text="Calculate" />
         <Label fx:id="label" layoutX="181.0" layoutY="425.0" minHeight="16" minWidth="69" />
-      <TableView fx:id="table_1" prefHeight="400.0" prefWidth="263.0">
+      <Button fx:id="sim2" layoutX="118.0" layoutY="306.0" mnemonicParsing="false" onAction="#sim2Action" prefHeight="84.0" prefWidth="69.0" text="Sim1" />
+      <Spinner fx:id="iterationSpinner" layoutX="21.0" layoutY="365.0" prefHeight="25.0" prefWidth="69.0" />
+      <TableView fx:id="tab1" prefHeight="250.0" prefWidth="180.0">
         <columns>
-          <TableColumn fx:id="routerId" prefWidth="127.0" text="routerId" />
-          <TableColumn fx:id="linkIds" prefWidth="135.0" text="linkIds" />
+          <TableColumn fx:id="t1c1" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="destination" />
+          <TableColumn fx:id="t1c2" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="metric" />
+            <TableColumn fx:id="t1c3" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="route" />
         </columns>
       </TableView>
-      <Spinner fx:id="spinner" layoutX="8.0" layoutY="430.0" />
-      <Label layoutX="8.0" layoutY="408.0" prefHeight="17.0" prefWidth="149.0" text="Input amount of iterations" />
-      <Label layoutX="8.0" layoutY="473.0" prefHeight="17.0" prefWidth="149.0" text="Input link to break" />
-      <Spinner fx:id="breakSpinner" layoutX="8.0" layoutY="490.0" />
-      <Button fx:id="sim1" layoutX="330.0" layoutY="431.0" mnemonicParsing="false" onAction="#sim1Action" prefHeight="84.0" prefWidth="119.0" text="Change Sim Mode" />
-      <Button fx:id="sim2" disable="true" layoutX="481.0" layoutY="430.0" mnemonicParsing="false" onAction="#sim2Action" prefHeight="84.0" prefWidth="69.0" text="Sim1" />
-      <Button fx:id="sim3" disable="true" layoutX="558.0" layoutY="430.0" mnemonicParsing="false" onAction="#sim3Action" prefHeight="84.0" prefWidth="69.0" text="Sim2" />
-      <Spinner fx:id="iterationSpinner" disable="true" layoutX="481.0" layoutY="531.0" prefHeight="25.0" prefWidth="69.0" />
+      <TableView fx:id="tab2" layoutX="250.0" prefHeight="250.0" prefWidth="180.0">
+        <columns>
+          <TableColumn fx:id="t2c1" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="destination" />
+          <TableColumn fx:id="t2c2" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="metric" />
+            <TableColumn fx:id="t2c3" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="route" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tab3" layoutX="500.0" prefHeight="250.0" prefWidth="180.0">
+        <columns>
+          <TableColumn fx:id="t3c1" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="destination" />
+          <TableColumn fx:id="t3c2" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="metric" />
+            <TableColumn fx:id="t3c3" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="route" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tab4" layoutX="750.0" prefHeight="250.0" prefWidth="180.0">
+        <columns>
+          <TableColumn fx:id="t4c1" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="destination" />
+          <TableColumn fx:id="t4c2" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="metric" />
+            <TableColumn fx:id="t4c3" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="route" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tab5" layoutX="1000.0" prefHeight="250.0" prefWidth="180.0">
+        <columns>
+          <TableColumn fx:id="t5c1" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="destination" />
+          <TableColumn fx:id="t5c2" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="metric" />
+            <TableColumn fx:id="t5c3" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="route" />
+        </columns>
+      </TableView>
+      <Line fx:id="line1" endX="30.0" fill="#e80e0e" layoutX="215.0" layoutY="138.0" startX="-30.0" stroke="#09ff00" strokeWidth="10.0" />
+      <Line fx:id="line2" endX="30.0" fill="#e80e0e" layoutX="465.0" layoutY="138.0" startX="-30.0" stroke="#09ff00" strokeWidth="10.0" />
+      <Line fx:id="line3" endX="30.0" fill="#e80e0e" layoutX="715.0" layoutY="138.0" startX="-30.0" stroke="#09ff00" strokeWidth="10.0" />
+      <Line fx:id="line4" endX="30.0" fill="#e80e0e" layoutX="965.0" layoutY="138.0" startX="-30.0" stroke="#09ff00" strokeWidth="10.0" />
     </children>
 </AnchorPane>

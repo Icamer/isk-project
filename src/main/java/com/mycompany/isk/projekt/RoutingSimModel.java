@@ -27,8 +27,6 @@ public class RoutingSimModel {
     Boolean isChanged;
 
     public Map<RoutingEntry, Metric> entryMetric = new HashMap<>();
-//    public Map<RoutingEntry, Long> entryMetric = new HashMap<>();
-
 
     public void doSim(long iteration, long breakIteration, long brokenLinkId) {
         for (int i = 0; i < iteration; i++) {
@@ -50,7 +48,6 @@ public class RoutingSimModel {
 
                     setMetricToOtherNext(re, linksOfRouter);
                     setMetricToOtherPrevious(re, linksOfRouter2);
-
 
                 }
             }

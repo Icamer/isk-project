@@ -1,11 +1,11 @@
 package com.mycompany.isk.projekt;
 
-public class DataTable2 {
+public class Data {
     Long networkDestination;
     Long metric;
     Long through;
 
-    public DataTable2(Long networkDestination, Long metric, Long through) {
+    public Data(Long networkDestination, Long metric, Long through) {
         this.networkDestination = networkDestination;
         this.metric = metric;
         this.through = through;
