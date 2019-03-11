@@ -84,6 +84,25 @@ public class FXMLController implements Initializable {
         RoutingData routingData = Arrays.stream(routingDataArray).filter(x -> (x.getIteration().longValue()) == (new Long((Integer)iterationSpinner.getValue()).longValue())).findAny().get();
         routingSimModel.setRoutingData(routingData);
         clear();
+        fillTables(routingSimModel);
+        fillTableViews();
+
+    }
+
+    private void fillTableViews() {
+        tab1.setItems(dataTable1);
+        tab2.setItems(dataTable2);
+        tab3.setItems(dataTable3);
+        tab4.setItems(dataTable4);
+        tab5.setItems(dataTable5);
+    }
+
+    private void fillTables(RoutingSimModel routingSimModel) {
+        routingSimModel.getRoutingData().getRouters().get(0).getRoutingTable().forEach(x -> dataTable1.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        routingSimModel.getRoutingData().getRouters().get(1).getRoutingTable().forEach(x -> dataTable2.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        routingSimModel.getRoutingData().getRouters().get(2).getRoutingTable().forEach(x -> dataTable3.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        routingSimModel.getRoutingData().getRouters().get(3).getRoutingTable().forEach(x -> dataTable4.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+//        routingSimModel.getRoutingData().getRouters().get(4).getRoutingTable().forEach(x -> dataTable5.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
 
     }
 

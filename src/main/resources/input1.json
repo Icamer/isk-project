@@ -6,7 +6,8 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 100000,
+            "through": 2
           },
           {
             "networkDestination": "1",
