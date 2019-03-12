@@ -120,9 +120,12 @@ public class FXMLController implements Initializable {
     private void setAdditionalVisibilities(Model model) {
         setVisibilities(true);
 
-        tab5.setVisible(isSizeAboveFour(model));
-        lab5.setVisible(isSizeAboveFour(model));
-        lin5.setVisible(isSizeAboveFour(model));
+        tab4.setVisible(isSizeFour(model));
+        lab4.setVisible(isSizeFour(model));
+        lin4.setVisible(isSizeFour(model));
+        tab5.setVisible(isSizeFive(model));
+        lab5.setVisible(isSizeFive(model));
+        lin5.setVisible(isSizeFive(model));
         if (model.getRoutingData().isBroken || isBroken) {
             Integer broke = makingBreaking(model);
             hideBroken(broke);
@@ -177,18 +180,19 @@ public class FXMLController implements Initializable {
         tab1.setVisible(visible);
         tab2.setVisible(visible);
         tab3.setVisible(visible);
-        tab4.setVisible(visible);
 
         lab0.setVisible(visible);
         lab1.setVisible(visible);
         lab2.setVisible(visible);
         lab3.setVisible(visible);
-        lab4.setVisible(visible);
 
         lin0.setVisible(visible);
         lin1.setVisible(visible);
         lin2.setVisible(visible);
         lin3.setVisible(visible);
+
+        tab4.setVisible(visible);
+        lab4.setVisible(visible);
         lin4.setVisible(visible);
 
         tab5.setVisible(visible);
@@ -197,11 +201,14 @@ public class FXMLController implements Initializable {
     }
 
     private void fillTableViews(Model model) {
+
         tab1.setItems(dataTable1);
         tab2.setItems(dataTable2);
         tab3.setItems(dataTable3);
-        tab4.setItems(dataTable4);
-        if (isSizeAboveFour(model)) {
+        if (isSizeFour(model)) {
+            tab4.setItems(dataTable4);
+        }
+        if (isSizeFive(model)) {
             tab5.setItems(dataTable5);
         }
     }
@@ -210,15 +217,21 @@ public class FXMLController implements Initializable {
         model.getRoutingData().getRouters().get(0).getRoutingTable().forEach(x -> dataTable1.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
         model.getRoutingData().getRouters().get(1).getRoutingTable().forEach(x -> dataTable2.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
         model.getRoutingData().getRouters().get(2).getRoutingTable().forEach(x -> dataTable3.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
-        model.getRoutingData().getRouters().get(3).getRoutingTable().forEach(x -> dataTable4.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
-        if (isSizeAboveFour(model)) {
+        if (isSizeFour(model)) {
+            model.getRoutingData().getRouters().get(3).getRoutingTable().forEach(x -> dataTable4.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        }
+        if (isSizeFive(model)) {
             model.getRoutingData().getRouters().get(4).getRoutingTable().forEach(x -> dataTable5.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
         }
 
     }
 
-    private boolean isSizeAboveFour(Model model) {
-        return model.getSize() > 4;
+    private boolean isSizeFour(Model model) {
+        return model.getSize() == 4;
+    }
+
+    private boolean isSizeFive(Model model) {
+        return model.getSize() == 5;
     }
 
     private void clear() {

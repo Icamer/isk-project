@@ -1,0 +1,2908 @@
+[
+  {
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ],
+    "iteration": 0
+  },
+  {
+    "iteration": 1,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 3
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 2,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 2,
+            "through": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 3
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 3,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 3,
+            "through": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 2,
+            "through": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 3,
+            "through": 2
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 3
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 4,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 4,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 3,
+            "through": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 2,
+            "through": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 4,
+            "through": 2
+          },
+          {
+            "networkDestination": "1",
+            "metric": 3,
+            "through": 2
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 3
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 5,
+    "isBroken": true,
+    "broken": 3,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 4,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 3,
+            "through": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 2,
+            "through": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 4,
+            "through": 2
+          },
+          {
+            "networkDestination": "1",
+            "metric": 3,
+            "through": 2
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 3
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 6,
+    "isBroken": true,
+    "broken": 3,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 4,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 3,
+            "through": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 7,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 4,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 5,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 8,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 6,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 5,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 9,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 6,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 7,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 10,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 8,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 7,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 11,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 8,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 9,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 12,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 10,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 9,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 13,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 10,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 11,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 14,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 12,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 11,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 15,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 12,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 13,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 16,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 14,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 13,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 17,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 14,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 15,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 17,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 14,
+            "through": 1
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 15,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 18,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 15,
+            "through": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  },
+  {
+    "iteration": 19,
+    "routers": [
+      {
+        "id": 0,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 0
+          },
+          {
+            "networkDestination": "2",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 2,
+            "through": 0
+          },
+          {
+            "networkDestination": "1",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 1
+          },
+          {
+            "networkDestination": "3",
+            "metric": 2,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 3,
+            "through": 1
+          },
+          {
+            "networkDestination": "1",
+            "metric": 2,
+            "through": 1
+          },
+          {
+            "networkDestination": "2",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "3",
+            "metric": 1,
+            "through": 2
+          },
+          {
+            "networkDestination": "4",
+            "metric": 999999
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "routingTable": [
+          {
+            "networkDestination": "0",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "1",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "2",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "3",
+            "metric": 999999
+          },
+          {
+            "networkDestination": "4",
+            "metric": 1,
+            "through": 3
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "linkId": "0",
+        "idServerOne": 0,
+        "idServerTwo": 1,
+        "isWorking": true
+      },
+      {
+        "linkId": "1",
+        "idServerOne": 1,
+        "idServerTwo": 2,
+        "isWorking": true
+      },
+      {
+        "linkId": "2",
+        "idServerOne": 2,
+        "idServerTwo": 3,
+        "isWorking": true
+      }
+    ]
+  }
+]
