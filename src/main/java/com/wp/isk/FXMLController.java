@@ -100,6 +100,7 @@ public class FXMLController implements Initializable {
     @FXML
     private void sim2Action(ActionEvent ae) {
         System.out.println("click me!");
+        iterationSpinner.setDisable(false);
         String s = textField.getCharacters().toString();
         fillData(s);
     }
@@ -131,24 +132,24 @@ public class FXMLController implements Initializable {
     private void hideBroken(Integer broke) {
         switch (broke) {
             case 0:
-                lab0.setVisible(false);
-                lin0.setVisible(false);
+                tab1.setVisible(false);
+//                lin0.setVisible(false);
                 break;
             case 1:
-                lab1.setVisible(false);
-                lin1.setVisible(false);
+                tab2.setVisible(false);
+//                lin1.setVisible(false);
                 break;
             case 2:
-                lab2.setVisible(false);
-                lin2.setVisible(false);
+                tab3.setVisible(false);
+//                lin2.setVisible(false);
                 break;
             case 3:
-                lab3.setVisible(false);
-                lin3.setVisible(false);
+                tab4.setVisible(false);
+//                lin3.setVisible(false);
                 break;
             case 4:
-                lab4.setVisible(false);
-                lin4.setVisible(false);
+                tab5.setVisible(false);
+//                lin4.setVisible(false);
                 break;
 
         }
@@ -232,11 +233,12 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setVisibilities(false);
-        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 17, 0));
+        iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0));
         iterationSpinner.setOnMouseReleased(x -> {
             System.out.println("SPIN ME");
             fillData(textField.getCharacters().toString());
         });
+        iterationSpinner.setDisable(true);
 
 
         dataTable1 = FXCollections.observableArrayList();

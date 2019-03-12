@@ -37,9 +37,9 @@ public class RoutingFullInfo implements Serializable {
                 routingTable.add(SingleEntry.builder()
                         .hash(hash)
                         .thisRouterId(router.getId())
-                        .networkDestination(targetRouter.getId())//todo:zmiana
+                        .networkDestination(targetRouter.getId())
                         .iteration(0L)
-                        .metric(100000L)
+                        .metric(999999L)
                         .build());
                 hash++;
             }

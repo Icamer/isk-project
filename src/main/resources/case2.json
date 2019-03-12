@@ -6,20 +6,20 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000,
+            "metric": 999999,
             "through": 2
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -28,19 +28,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -49,19 +49,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -70,19 +70,19 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       }
@@ -124,11 +124,11 @@
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -149,7 +149,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -158,7 +158,7 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
@@ -179,11 +179,11 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
@@ -237,7 +237,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -288,7 +288,7 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
@@ -606,7 +606,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -615,15 +615,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -717,7 +717,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -726,15 +726,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -826,7 +826,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -835,15 +835,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -935,7 +935,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -944,15 +944,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1044,7 +1044,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1053,15 +1053,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1153,7 +1153,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1162,15 +1162,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1262,7 +1262,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1271,15 +1271,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1371,7 +1371,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1380,15 +1380,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1480,7 +1480,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1489,15 +1489,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1589,7 +1589,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1598,15 +1598,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1698,7 +1698,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1707,15 +1707,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1807,7 +1807,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1816,15 +1816,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1916,7 +1916,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -1925,15 +1925,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -1983,7 +1983,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -2004,7 +2004,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -2025,7 +2025,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -2034,15 +2034,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
@@ -2092,7 +2092,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -2113,7 +2113,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -2134,7 +2134,7 @@
           },
           {
             "networkDestination": "3",
-            "metric": 100000
+            "metric": 999999
           }
         ]
       },
@@ -2143,15 +2143,15 @@
         "routingTable": [
           {
             "networkDestination": "0",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "1",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "2",
-            "metric": 100000
+            "metric": 999999
           },
           {
             "networkDestination": "3",
