@@ -90,6 +90,18 @@ public class FXMLController implements Initializable {
     private Label lab0;
     @FXML
     private Line lin0;
+
+    @FXML
+    private Label rout1;
+    @FXML
+    private Label rout2;
+    @FXML
+    private Label rout3;
+    @FXML
+    private Label rout4;
+    @FXML
+    private Label rout5;
+
     @FXML
     private Spinner iterationSpinner;
     private Model model;
@@ -123,9 +135,11 @@ public class FXMLController implements Initializable {
         tab4.setVisible(isSizeFour(model));
         lab4.setVisible(isSizeFour(model));
         lin4.setVisible(isSizeFour(model));
+        rout4.setVisible(isSizeFour(model));
         tab5.setVisible(isSizeFive(model));
         lab5.setVisible(isSizeFive(model));
         lin5.setVisible(isSizeFive(model));
+        rout5.setVisible(isSizeFive(model));
         if (model.getRoutingData().isBroken || isBroken) {
             Integer broke = makingBreaking(model);
             hideBroken(broke);
@@ -135,22 +149,27 @@ public class FXMLController implements Initializable {
     private void hideBroken(Integer broke) {
         switch (broke) {
             case 0:
+                rout1.setVisible(false);
                 tab1.setVisible(false);
 //                lin0.setVisible(false);
                 break;
             case 1:
+                rout2.setVisible(false);
                 tab2.setVisible(false);
 //                lin1.setVisible(false);
                 break;
             case 2:
+                rout3.setVisible(false);
                 tab3.setVisible(false);
 //                lin2.setVisible(false);
                 break;
             case 3:
+                rout4.setVisible(false);
                 tab4.setVisible(false);
 //                lin3.setVisible(false);
                 break;
             case 4:
+                rout5.setVisible(false);
                 tab5.setVisible(false);
 //                lin4.setVisible(false);
                 break;
@@ -190,6 +209,12 @@ public class FXMLController implements Initializable {
         lin1.setVisible(visible);
         lin2.setVisible(visible);
         lin3.setVisible(visible);
+
+        rout1.setVisible(visible);
+        rout2.setVisible(visible);
+        rout3.setVisible(visible);
+        rout4.setVisible(visible);
+        rout5.setVisible(visible);
 
         tab4.setVisible(visible);
         lab4.setVisible(visible);
