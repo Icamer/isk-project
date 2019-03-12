@@ -922,7 +922,7 @@
           {
             "networkDestination": "4",
             "metric": 4,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1063,7 +1063,7 @@
           {
             "networkDestination": "4",
             "metric": 4,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1204,7 +1204,7 @@
           {
             "networkDestination": "4",
             "metric": 6,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1345,7 +1345,7 @@
           {
             "networkDestination": "4",
             "metric": 6,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1486,7 +1486,7 @@
           {
             "networkDestination": "4",
             "metric": 8,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1627,7 +1627,7 @@
           {
             "networkDestination": "4",
             "metric": 8,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1768,7 +1768,7 @@
           {
             "networkDestination": "4",
             "metric": 10,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -1909,7 +1909,7 @@
           {
             "networkDestination": "4",
             "metric": 10,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -2050,7 +2050,7 @@
           {
             "networkDestination": "4",
             "metric": 12,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -2191,7 +2191,7 @@
           {
             "networkDestination": "4",
             "metric": 12,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -2332,7 +2332,7 @@
           {
             "networkDestination": "4",
             "metric": 14,
-            "through": 2
+            "through": 1
           }
         ]
       },
@@ -2473,7 +2473,7 @@
           {
             "networkDestination": "4",
             "metric": 14,
-            "through": 2
+            "through": 1
           }
         ]
       },
