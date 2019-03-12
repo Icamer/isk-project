@@ -921,7 +921,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 4,
+            "through": 2
           }
         ]
       },
@@ -1061,7 +1062,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 4,
+            "through": 2
           }
         ]
       },
@@ -1201,7 +1203,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 6,
+            "through": 2
           }
         ]
       },
@@ -1341,7 +1344,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 6,
+            "through": 2
           }
         ]
       },
@@ -1481,7 +1485,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 8,
+            "through": 2
           }
         ]
       },
@@ -1621,7 +1626,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 8,
+            "through": 2
           }
         ]
       },
@@ -1761,7 +1767,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 10,
+            "through": 2
           }
         ]
       },
@@ -1901,7 +1908,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 10,
+            "through": 2
           }
         ]
       },
@@ -2041,7 +2049,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 12,
+            "through": 2
           }
         ]
       },
@@ -2181,7 +2190,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 12,
+            "through": 2
           }
         ]
       },
@@ -2321,7 +2331,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 14,
+            "through": 2
           }
         ]
       },
@@ -2461,7 +2472,8 @@
           },
           {
             "networkDestination": "4",
-            "metric": 999999
+            "metric": 14,
+            "through": 2
           }
         ]
       },
