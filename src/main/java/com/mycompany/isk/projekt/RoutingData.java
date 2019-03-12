@@ -26,6 +26,8 @@ public class RoutingData implements Serializable{
     List<Router> routers;
     List<Link> links;
     Long iteration;
+    Boolean isBroken = false;
+    Integer broken = 0;
 
     public void fillRoutingTables() {
         Long hash = 0L;

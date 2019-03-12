@@ -30,21 +30,18 @@ public class JsonMapping {
         return null;
     }
 
-    public RoutingData getRoutingData(String str) {
+//    public RoutingData getRoutingData(String str) {
+//        try {
+//            return mapper.readValue(new File(str), RoutingData.class);
+//        } catch (IOException ex) {
+//            System.out.println(ex);
+//        }
+//        return null;
+//    }
+    public RoutingData[] getRoutingData(String fileName) {
         try {
-            return mapper.readValue(new File(str), RoutingData.class);
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-        return null;
-    }
-    public RoutingData[] getRoutingData(boolean bool) {
-        try {
-            if(bool){
-                return mapper.readValue(new File("src/main/resources/input1.json"), RoutingData[].class);
-            } else {
-                return mapper.readValue(new File("src/main/resources/input2.json"), RoutingData[].class);
-            }
+                return mapper.readValue(new File("src/main/resources/" + fileName), RoutingData[].class);
+
         } catch (IOException ex) {
             System.out.println(ex);
         }

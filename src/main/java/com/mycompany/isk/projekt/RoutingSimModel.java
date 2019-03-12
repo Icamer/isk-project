@@ -25,6 +25,7 @@ public class RoutingSimModel {
 
     RoutingData routingData;
     Boolean isChanged;
+    int size = 0;
 
     public Map<RoutingEntry, Metric> entryMetric = new HashMap<>();
 
