@@ -1,5 +1,8 @@
-package com.mycompany.isk.projekt;
+package com.wp.isk;
 
+/**
+ * @author w.podosek
+ */
 public class Data {
     Long networkDestination;
     Long metric;

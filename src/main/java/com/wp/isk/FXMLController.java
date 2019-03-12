@@ -1,8 +1,4 @@
-package com.mycompany.isk.projekt;
-
-import java.net.URL;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+package com.wp.isk;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,15 +9,23 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Line;
 
+import java.net.URL;
+import java.util.Arrays;
+import java.util.ResourceBundle;
+
+/**
+ * @author w.podosek
+ */
 public class FXMLController implements Initializable {
 
 
+    Boolean isBroken = false;
+    Integer broken = 0;
     private ObservableList<Data> dataTable1;
     private ObservableList<Data> dataTable2;
     private ObservableList<Data> dataTable3;
     private ObservableList<Data> dataTable4;
     private ObservableList<Data> dataTable5;
-
     @FXML
     private TableView<Data> tab1;
     @FXML
@@ -32,42 +36,36 @@ public class FXMLController implements Initializable {
     private TableView<Data> tab4;
     @FXML
     private TableView<Data> tab5;
-
     @FXML
-    private TableColumn<RoutingEntry, Long> t1c1;
+    private TableColumn<SingleEntry, Long> t1c1;
     @FXML
-    private TableColumn<RoutingEntry, Long> t1c2;
+    private TableColumn<SingleEntry, Long> t1c2;
     @FXML
-    private TableColumn<RoutingEntry, Long> t1c3;
-
+    private TableColumn<SingleEntry, Long> t1c3;
     @FXML
-    private TableColumn<RoutingEntry, Long> t2c1;
+    private TableColumn<SingleEntry, Long> t2c1;
     @FXML
-    private TableColumn<RoutingEntry, Long> t2c2;
+    private TableColumn<SingleEntry, Long> t2c2;
     @FXML
-    private TableColumn<RoutingEntry, Long> t2c3;
-
+    private TableColumn<SingleEntry, Long> t2c3;
     @FXML
-    private TableColumn<RoutingEntry, Long> t3c1;
+    private TableColumn<SingleEntry, Long> t3c1;
     @FXML
-    private TableColumn<RoutingEntry, Long> t3c2;
+    private TableColumn<SingleEntry, Long> t3c2;
     @FXML
-    private TableColumn<RoutingEntry, Long> t3c3;
-
+    private TableColumn<SingleEntry, Long> t3c3;
     @FXML
-    private TableColumn<RoutingEntry, Long> t4c1;
+    private TableColumn<SingleEntry, Long> t4c1;
     @FXML
-    private TableColumn<RoutingEntry, Long> t4c2;
+    private TableColumn<SingleEntry, Long> t4c2;
     @FXML
-    private TableColumn<RoutingEntry, Long> t4c3;
-
+    private TableColumn<SingleEntry, Long> t4c3;
     @FXML
-    private TableColumn<RoutingEntry, Long> t5c1;
+    private TableColumn<SingleEntry, Long> t5c1;
     @FXML
-    private TableColumn<RoutingEntry, Long> t5c2;
+    private TableColumn<SingleEntry, Long> t5c2;
     @FXML
-    private TableColumn<RoutingEntry, Long> t5c3;
-
+    private TableColumn<SingleEntry, Long> t5c3;
     @FXML
     private Label lab5;
     @FXML
@@ -92,15 +90,12 @@ public class FXMLController implements Initializable {
     private Label lab0;
     @FXML
     private Line lin0;
-
-
     @FXML
     private Spinner iterationSpinner;
-    private RoutingSimModel routingSimModel;
-
+    private Model model;
     @FXML
     private TextField textField;
-    private Integer whenBroke=Integer.MIN_VALUE;
+    private Integer whenBroke = Integer.MIN_VALUE;
 
     @FXML
     private void sim2Action(ActionEvent ae) {
@@ -109,35 +104,32 @@ public class FXMLController implements Initializable {
         fillData(s);
     }
 
-    Boolean isBroken = false;
-    Integer broken = 0;
-
     private void fillData(String fileName) {
-        routingSimModel = RoutingSimModel.builder().build();
-        RoutingData[] routingDataArray = new JsonMapping().getRoutingData(fileName);
-        RoutingData routingData = Arrays.stream(routingDataArray).filter(x -> (x.getIteration().longValue()) == (new Long((Integer)iterationSpinner.getValue()).longValue())).findAny().get();
-        routingSimModel.setRoutingData(routingData);
-        routingSimModel.setSize(routingData.getRouters().size());
+        model = Model.builder().build();
+        RoutingFullInfo[] routingDataArray = new MapperWrapper().getData(fileName);
+        RoutingFullInfo routingData = Arrays.stream(routingDataArray).filter(x -> (x.getIteration().longValue()) == (new Long((Integer) iterationSpinner.getValue()).longValue())).findAny().get();
+        model.setRoutingData(routingData);
+        model.setSize(routingData.getRouters().size());
         clear();
-        fillTables(routingSimModel);
-        fillTableViews(routingSimModel);
-        setAdditionalVisibilities(routingSimModel);
+        fillTables(model);
+        fillTableViews(model);
+        setAdditionalVisibilities(model);
     }
 
-    private void setAdditionalVisibilities(RoutingSimModel routingSimModel) {
+    private void setAdditionalVisibilities(Model model) {
         setVisibilities(true);
 
-        tab5.setVisible(isSizeAboveFour(routingSimModel));
-        lab5.setVisible(isSizeAboveFour(routingSimModel));
-        lin5.setVisible(isSizeAboveFour(routingSimModel));
-        if(routingSimModel.getRoutingData().isBroken || isBroken){
-            Integer broke = makingBreaking(routingSimModel);
+        tab5.setVisible(isSizeAboveFour(model));
+        lab5.setVisible(isSizeAboveFour(model));
+        lin5.setVisible(isSizeAboveFour(model));
+        if (model.getRoutingData().isBroken || isBroken) {
+            Integer broke = makingBreaking(model);
             hideBroken(broke);
         }
     }
 
     private void hideBroken(Integer broke) {
-        switch (broke){
+        switch (broke) {
             case 0:
                 lab0.setVisible(false);
                 lin0.setVisible(false);
@@ -162,18 +154,18 @@ public class FXMLController implements Initializable {
         }
     }
 
-    private Integer makingBreaking(RoutingSimModel routingSimModel) {
-        if((Integer)iterationSpinner.getValue() < whenBroke){
+    private Integer makingBreaking(Model model) {
+        if ((Integer) iterationSpinner.getValue() < whenBroke) {
             broken = -1;
             isBroken = false;
             whenBroke = Integer.MIN_VALUE;
         }
         Integer broke = 0;
-        if(routingSimModel.getRoutingData().isBroken){
-            broke = routingSimModel.getRoutingData().getBroken();
+        if (model.getRoutingData().isBroken) {
+            broke = model.getRoutingData().getBroken();
             broken = broke;
-            isBroken = routingSimModel.getRoutingData().isBroken;
-            whenBroke = (Integer)iterationSpinner.getValue();
+            isBroken = model.getRoutingData().isBroken;
+            whenBroke = (Integer) iterationSpinner.getValue();
         } else {
             broke = broken;
         }
@@ -203,29 +195,29 @@ public class FXMLController implements Initializable {
         lin5.setVisible(visible);
     }
 
-    private void fillTableViews(RoutingSimModel routingSimModel) {
+    private void fillTableViews(Model model) {
         tab1.setItems(dataTable1);
         tab2.setItems(dataTable2);
         tab3.setItems(dataTable3);
         tab4.setItems(dataTable4);
-        if(isSizeAboveFour(routingSimModel)){
+        if (isSizeAboveFour(model)) {
             tab5.setItems(dataTable5);
         }
     }
 
-    private void fillTables(RoutingSimModel routingSimModel) {
-        routingSimModel.getRoutingData().getRouters().get(0).getRoutingTable().forEach(x -> dataTable1.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
-        routingSimModel.getRoutingData().getRouters().get(1).getRoutingTable().forEach(x -> dataTable2.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
-        routingSimModel.getRoutingData().getRouters().get(2).getRoutingTable().forEach(x -> dataTable3.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
-        routingSimModel.getRoutingData().getRouters().get(3).getRoutingTable().forEach(x -> dataTable4.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
-        if(isSizeAboveFour(routingSimModel)){
-            routingSimModel.getRoutingData().getRouters().get(4).getRoutingTable().forEach(x -> dataTable5.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+    private void fillTables(Model model) {
+        model.getRoutingData().getRouters().get(0).getRoutingTable().forEach(x -> dataTable1.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        model.getRoutingData().getRouters().get(1).getRoutingTable().forEach(x -> dataTable2.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        model.getRoutingData().getRouters().get(2).getRoutingTable().forEach(x -> dataTable3.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        model.getRoutingData().getRouters().get(3).getRoutingTable().forEach(x -> dataTable4.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
+        if (isSizeAboveFour(model)) {
+            model.getRoutingData().getRouters().get(4).getRoutingTable().forEach(x -> dataTable5.add(new Data(x.getNetworkDestination(), x.getMetric(), x.getThrough())));
         }
 
     }
 
-    private boolean isSizeAboveFour(RoutingSimModel routingSimModel) {
-        return routingSimModel.getSize() > 4;
+    private boolean isSizeAboveFour(Model model) {
+        return model.getSize() > 4;
     }
 
     private void clear() {
@@ -241,7 +233,7 @@ public class FXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         setVisibilities(false);
         iterationSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 17, 0));
-        iterationSpinner.setOnMouseReleased(x-> {
+        iterationSpinner.setOnMouseReleased(x -> {
             System.out.println("SPIN ME");
             fillData(textField.getCharacters().toString());
         });
